@@ -14,6 +14,10 @@ class PageController extends Controller
         return view ('admin.login');
     }
 
+    public function register () {
+        return view('admin.register');
+    }
+
     public function books () {
         $books = Book::all();
         return view('admin.books', compact('books'));

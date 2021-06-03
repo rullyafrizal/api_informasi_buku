@@ -49,6 +49,9 @@
                                     </button>
                                     <hr>
                                 </form>
+                                <div class="text-center">
+                                    <a class="small" href="/register">Don't have an account? Register!</a>
+                                </div>
                             </div>
                         </div>
                     </div>

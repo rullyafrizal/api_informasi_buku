@@ -20,23 +20,23 @@ class AuthController extends Controller
         }
     }
 
-    public function postRegister(Request $request){
+    public function register(Request $request){
         $this->validate($request, [
-            'username' => 'required|min:5',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6|confirmed'
         ]);
 
         $user = User::create([
-            'name' => $request->username,
             'email' => $request->email,
             'password' => bcrypt($request->password)
         ]);
 
-        //User login otomatis setelah register
+        /**
+        * Automatic Login After User Registered
+        * */
         auth()->loginUsingId($user->id);
 
-        return redirect()->route('home');
+        return redirect()->route('books');
     }
 
     public function logout(){
