@@ -12,7 +12,7 @@ Books Information System is a Open Source Books API that provides 4 endpoint API
 | /api/v1/books/  | GET    | BookController@index  |
 | /api/v1/books/{id}  | GET    | BookController@show  |
 | /api/v1/books/search/{keyword}  | GET    | BookController@search  |
-| /books/filter  | POST    | BookController@filter  |
+| /api/v1/books/filter  | POST    | BookController@filter  |
 
 Besides the endoint API, in this project also provided Author and Book CRUD Features that
 needs basic authentication first. 
