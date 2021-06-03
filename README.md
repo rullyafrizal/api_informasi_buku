@@ -24,7 +24,7 @@ needs basic authentication first.
 
 ### Application Overview
 - Books Page
-    ![Image of Aplikasi](/public/images/app.png)
+    ![Image of Aplikasi](/public/images/authors_page.png)
 
 - Add New Book Page
     ![Image of Aplikasi](/public/images/add_book.png)
@@ -36,7 +36,7 @@ needs basic authentication first.
     ![Image of Aplikasi](/public/images/app3.png)
 
 - Authors Page
-    ![Image of Aplikasi](/public/images/authors_page.png)
+    ![Image of Aplikasi](/public/images/app.png)
 
 - Add New Authors Page
     ![Image of Aplikasi](/public/images/add_author.png)
