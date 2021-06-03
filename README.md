@@ -29,19 +29,29 @@ needs basic authentication first.
 git clone https://github.com/rullyafrizal/api_informasi_buku.git
 ```
 
-2. Use the package manager [composer](https://getcomposer.org/download/) to install vendor.
+2. Configure .env files, => copy .env.example and rename it to .env
+
+3. Set your database configuration in .env files
+
+4. Generate APP_KEY
+
+```bash
+php artisan key:generate
+```
+
+5. Use the package manager [composer](https://getcomposer.org/download/) to install vendor.
 
 ```bash
 composer install
 ```
 
-3. To make uploaded files accessible from the web, you should create a symbolic link from public/storage to storage/app/public.
+6. To make uploaded files accessible from the web, you should create a symbolic link from public/storage to storage/app/public.
 
 ```bash
 php artisan storage:link
 ```
 
-3. Run Laravel server
+7. Run Laravel server
 
 ```bash
 php artisan serve
