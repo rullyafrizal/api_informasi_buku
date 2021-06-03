@@ -17,8 +17,8 @@ Books Information System is a Open Source Books API that provides 4 endpoint API
 Besides the endoint API, in this project also provided Author and Book CRUD Features that
 needs basic authentication first.
 
-### Database Design 
-<p align="center"><img src="blob:https://mega.nz/1413005e-80f6-4047-bf4f-9cc0ad0eb14f"/></p>
+### Database Design
+![Image of Database](blob:https://mega.nz/1413005e-80f6-4047-bf4f-9cc0ad0eb14f)
 
 
 ## Usage
