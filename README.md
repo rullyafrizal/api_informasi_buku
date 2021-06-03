@@ -14,6 +14,9 @@ Books Information System is a Open Source Books API that provides 4 endpoint API
 | /api/v1/books/search/{keyword}  | GET    | BookController@search  |
 | /api/v1/books/filter  | POST    | BookController@filter  |
 
+
+[API Documentation Link](https://tinyurl.com/2y35uukj)
+
 Besides the endoint API, in this project also provided Author and Book CRUD Features that
 needs basic authentication first. 
 
@@ -23,6 +26,7 @@ needs basic authentication first.
 
 
 ### Application Overview
+  [CRUD and API Demonstration](https://mega.nz/file/k7IhGCTR#pXv9kK1ud1uqckzrPzsrI8uMTJcFQUe3HgMFtATPcY4)
 - Books Page
     ![Image of Aplikasi](/public/images/authors_page.png)
 
