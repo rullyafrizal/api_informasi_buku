@@ -118,9 +118,15 @@ class BookController extends Controller
         }
     }
 
+
+
+    /**
+     *  API Methods
+     */
+
     public function index () {
         try {
-            $books = Book::with('authors')->get();
+            $books = Book::orderByDesc('id')->get(['id', 'title', 'page', 'release_date']);
             return response()->json([
                 'message' => 'Fetch Success',
                 'data' => $books
@@ -135,11 +141,15 @@ class BookController extends Controller
 
     public function show ($id) {
         try {
-            $book = Book::with('authors')->find($id);
+
+            $book = Book::where('id', $id)
+                ->firstOrFail(['id', 'title', 'content', 'cover', 'page', 'release_date']);
+
             return response()->json([
                 'message' => 'Fetch Success',
                 'data' => $book
             ], 200);
+
         } catch (Exception $ex) {
             report($ex);
             return response()->json([
@@ -150,9 +160,10 @@ class BookController extends Controller
 
     public function search ($keyword) {
         try {
-            $books = Book::with('authors')
-                ->select('*')
-                ->where('title', 'like', '%'.$keyword.'%')->get();
+
+            $books = Book::select(['id', 'title', 'page', 'release_date'])
+                ->where('title', 'like', '%'.$keyword.'%')
+                ->get();
 
             return response()->json([
                 'message' => 'Search Success',
@@ -176,15 +187,20 @@ class BookController extends Controller
             $authors = $request->author;
 
             foreach ($authors as $author) {
-                $au = Author::with('books')->where('name', $author)->get();
+                $au = Book::whereHas('authors', function ($query) use ($author) {
+                        $query->where('authors.name', $author);
+                    })
+                    ->orderByDesc('id')
+                    ->get(['id', 'title', 'page', 'release_date']);
+
                 $book[] = $au;
             }
 
             return response()->json([
                 'message' => 'success',
                 'data' => $book
-
             ], 200);
+
         } catch (Exception $ex) {
             report($ex);
             return response()->json([
