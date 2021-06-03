@@ -117,4 +117,79 @@ class BookController extends Controller
             ], 400);
         }
     }
+
+    public function index () {
+        try {
+            $books = Book::with('authors')->get();
+            return response()->json([
+                'message' => 'Fetch Success',
+                'data' => $books
+            ], 200);
+        } catch (Exception $ex) {
+            report($ex);
+            return response()->json([
+                'error' => 'Error Fetching Books'
+            ], 400);
+        }
+    }
+
+    public function show ($id) {
+        try {
+            $book = Book::with('authors')->find($id);
+            return response()->json([
+                'message' => 'Fetch Success',
+                'data' => $book
+            ], 200);
+        } catch (Exception $ex) {
+            report($ex);
+            return response()->json([
+                'error' => 'Error Fetching Book'
+            ], 400);
+        }
+    }
+
+    public function search ($keyword) {
+        try {
+            $books = Book::with('authors')
+                ->select('*')
+                ->where('title', 'like', '%'.$keyword.'%')->get();
+
+            return response()->json([
+                'message' => 'Search Success',
+                'data' => $books
+            ], 200);
+
+        } catch (Exception $ex) {
+            report($ex);
+            return response()->json([
+                'error' => 'Error Fetching Book'
+            ], 400);
+        }
+    }
+
+    public function filter (Request $request) {
+        $this->validate($request, [
+            'author' => 'required'
+        ]);
+
+        try {
+            $authors = $request->author;
+
+            foreach ($authors as $author) {
+                $au = Author::with('books')->where('name', $author)->get();
+                $book[] = $au;
+            }
+
+            return response()->json([
+                'message' => 'success',
+                'data' => $book
+
+            ], 200);
+        } catch (Exception $ex) {
+            report($ex);
+            return response()->json([
+                'error' => 'Error Fetching Book'
+            ], 400);
+        }
+    }
 }
