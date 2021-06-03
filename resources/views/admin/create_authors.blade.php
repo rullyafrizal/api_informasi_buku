@@ -3,7 +3,7 @@
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-header py-3 justify-content-between">
-            Add New Book
+            Add New Author
         </div>
         <div class="card-body">
             <form method="post" action="{{ route('author') }}">
