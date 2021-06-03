@@ -15,11 +15,43 @@ Books Information System is a Open Source Books API that provides 4 endpoint API
 | /books/filter  | POST    | BookController@filter  |
 
 Besides the endoint API, in this project also provided Author and Book CRUD Features that
-needs basic authentication first.
+needs basic authentication first. 
+
 
 ### Database Design
 ![Image of Database](/public/images/erd.png)
 
+
+### Application Overview
+- Books Page
+    ![Image of Aplikasi](/public/images/app.png)
+
+- Add New Book Page
+    ![Image of Aplikasi](/public/images/add_book.png)
+
+- Edit Book Page
+    ![Image of Aplikasi](/public/images/app2.png)
+
+- Show Book Page
+    ![Image of Aplikasi](/public/images/app3.png)
+
+- Authors Page
+    ![Image of Aplikasi](/public/images/authors_page.png)
+
+- Add New Authors Page
+    ![Image of Aplikasi](/public/images/add_author.png)
+
+- Edit Author Page
+    ![Image of Aplikasi](/public/images/edit_author.png)
+
+- Show Author Page
+    ![Image of Aplikasi](/public/images/show_author.png)
+
+- Login
+  ![Image of Aplikasi](/public/images/login.png)
+
+- Register
+  ![Image of Aplikasi](/public/images/regsiter.png)
 
 ## Usage
 - Prerequisites
