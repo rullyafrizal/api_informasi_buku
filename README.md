@@ -18,7 +18,7 @@ Besides the endoint API, in this project also provided Author and Book CRUD Feat
 needs basic authentication first.
 
 ### Database Design
-![Image of Database](blob:https://mega.nz/1413005e-80f6-4047-bf4f-9cc0ad0eb14f)
+![Image of Database](/public/images/erd.png)
 
 
 ## Usage
