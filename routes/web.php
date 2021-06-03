@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PageController@login')->middleware('guest');
+Route::get('/', 'PageController@login')->name('loginPage')->middleware('guest');
 Route::post('/login', 'AuthController@login')->name('login')->middleware('guest');
 Route::post('/logout', 'AuthController@logout')->name('logout');
 

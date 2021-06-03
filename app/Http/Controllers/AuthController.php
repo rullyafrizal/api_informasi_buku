@@ -16,7 +16,7 @@ class AuthController extends Controller
         if(auth()->attempt(['email' => $request->email, 'password' => $request->password])){
             return redirect()->route('books');
         } else {
-            return redirect()->route('login')->with(['error' => 'Invalid Email/Password']);
+            return redirect()->route('loginPage')->with(['error' => 'Invalid Email/Password']);
         }
     }
 
@@ -42,6 +42,6 @@ class AuthController extends Controller
     public function logout(){
         auth()->logout();
 
-        return redirect()->route('login');
+        return redirect()->route('loginPage');
     }
 }
